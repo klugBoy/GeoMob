@@ -6,17 +6,15 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.corona.geomob.data.DAOs.HistoriqueDAO
 import com.example.corona.geomob.data.DAOs.PaysDAO
-import com.example.corona.geomob.data.Domaines.Historique
-import com.example.corona.geomob.data.Domaines.Image
-import com.example.corona.geomob.data.Domaines.Pays
-import com.example.corona.geomob.data.Domaines.Personnalite
+import com.example.corona.geomob.data.Domaines.*
 import java.util.concurrent.locks.Lock
 
 
 @Database(entities = [(Pays::class),
     (Historique::class),
     (Personnalite::class),
-    (Image::class)], version = 5)
+    (Image::class),
+    (Video::class)], version = 5)
 abstract class SqlLiteDateBase:RoomDatabase() {
 
     abstract fun getPaysDao() :PaysDAO
