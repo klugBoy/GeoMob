@@ -8,10 +8,11 @@ import com.example.corona.geomob.data.DAOs.HistoriqueDAO
 import com.example.corona.geomob.data.DAOs.PaysDAO
 import com.example.corona.geomob.data.Domaines.Historique
 import com.example.corona.geomob.data.Domaines.Pays
+import com.example.corona.geomob.data.Domaines.Personnalite
 import java.util.concurrent.locks.Lock
 
 
-@Database(entities = [(Pays::class) , (Historique::class)], version = 5)
+@Database(entities = [(Pays::class) , (Historique::class), (Personnalite::class)], version = 5)
 abstract class SqlLiteDateBase:RoomDatabase() {
 
     abstract fun getPaysDao() :PaysDAO
