@@ -59,15 +59,15 @@ class MainActivity : AppCompatActivity() , CoroutineScope {
                 "https://github.com/hjnilsson/country-flags/blob/master/png100px/ae.png",
                 "https://upload.wikimedia.org/wikipedia/commons/3/3e/%22Ishy_Bilady%22_performed_by_the_United_States_Navy_Band.oga")
             applicationContext?.let {
-                val pays =  SqlLiteDateBase(it).getPaysDao().addMultiplePays(country1,country2,country3,country4,country5)
+ //               val pays =  SqlLiteDateBase(it).getPaysDao().addMultiplePays(country1,country2,country3,country4,country5)
 //                val paysSize = SqlLiteDateBase(it).getPaysDao().getAllPays().size
-                val help = SqlLiteDateBase(it).getPaysDao().getPays(5)!!.nom
+  //              val help = SqlLiteDateBase(it).getPaysDao().getPays(5)!!.nom
 
-                  val historique = Historique("1830-07-05","Algeria was colonized by the French",1)
-                  val historiqueId = SqlLiteDateBase(it).getHistoriqueDao().addHistorique(historique)
-                val help2 = SqlLiteDateBase(it).getHistoriqueDao().getHistorique(1)!!.dateHistorique
-
-                Toast.makeText(applicationContext, "$help2", Toast.LENGTH_LONG).show()
+ //                 val historique = Historique("1830-07-05","Algeria was colonized by the French",1)
+                  val historiqueId = SqlLiteDateBase(it).getHistoriqueDao().findByPaysId(1)
+               // val help2 = SqlLiteDateBase(it).getHistoriqueDao().getHistorique(1)!!.dateHistorique
+                    val k = historiqueId!!.get(0).dateHistorique
+                Toast.makeText(applicationContext, "$k", Toast.LENGTH_LONG).show()
 
             }
         }
