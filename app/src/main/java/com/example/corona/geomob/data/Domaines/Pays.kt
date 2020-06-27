@@ -1,4 +1,4 @@
-package com.example.corona.geomob.data
+package com.example.corona.geomob.data.Domaines
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,19 +9,21 @@ import java.io.Serializable
 @Entity(tableName = "pays")
 data class Pays(
 
-    @ColumnInfo(name = "description") val title: String,
+    @ColumnInfo(name = "nom") val nom:String,
 
-    @ColumnInfo(name = "surface") val body: String,
+    @ColumnInfo(name = "description") val description: String,
 
-    @ColumnInfo(name = "population") val _date : String,
+    @ColumnInfo(name = "surface") val surface: Long,
 
-    @ColumnInfo(name = "urlDrapeau") val codecolor: Int,
+    @ColumnInfo(name = "population") val population : Long,
 
-    @ColumnInfo(name = "urlHymneNational") val 
+    @ColumnInfo(name = "urlDrapeau") val urlDrapeau: String,
+
+    @ColumnInfo(name = "urlHymneNational") val urlHymneNational:String
 
 
 ) :Serializable {
-
     @PrimaryKey(autoGenerate = true) var id : Int = 0
+
 
 }
