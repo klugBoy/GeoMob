@@ -17,7 +17,6 @@ import java.io.Serializable
 )
 data class Ressource(
 
-
     @ColumnInfo(name = "description") val description: String,
 
     @ColumnInfo(name = "pays_id") val paysId: Int

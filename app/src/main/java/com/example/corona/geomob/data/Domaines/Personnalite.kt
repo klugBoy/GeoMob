@@ -20,7 +20,6 @@ data class Personnalite(
 
     @ColumnInfo(name = "pays_id") val paysId: Int
 
-
 ) : Serializable {
 
     @PrimaryKey(autoGenerate = true) var id : Int = 0

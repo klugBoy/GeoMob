@@ -4,21 +4,29 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.corona.geomob.data.DAOs.HistoriqueDAO
-import com.example.corona.geomob.data.DAOs.PaysDAO
+import com.example.corona.geomob.data.DAOs.*
 import com.example.corona.geomob.data.Domaines.*
 import java.util.concurrent.locks.Lock
 
 
-@Database(entities = [(Pays::class),
+@Database(entities = [
+    (Pays::class),
     (Historique::class),
     (Personnalite::class),
     (Image::class),
-    (Video::class)], version = 5)
+    (Tweet::class),
+    (Video::class),
+    (Ressource::class)
+], version = 5)
 abstract class SqlLiteDateBase:RoomDatabase() {
 
     abstract fun getPaysDao() :PaysDAO
     abstract fun getHistoriqueDao() :HistoriqueDAO
+    abstract fun getPersonnaliteDAO() :PersonnaliteDAO
+    abstract fun getImageDao() :ImageDAO
+    abstract fun getTweetDAO() :TweetDAO
+    abstract fun getVideoDAO() :VideoDAO
+    abstract fun getRessourceDAO() :RessourceDAO
 
     companion object {
 

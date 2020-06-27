@@ -21,9 +21,8 @@ data class Pays(
 
     @ColumnInfo(name = "urlHymneNational") val urlHymneNational:String
 
-
 ) :Serializable {
-    @PrimaryKey(autoGenerate = true) var id : Int = 0
 
+    @PrimaryKey(autoGenerate = true) var id : Int = 0
 
 }

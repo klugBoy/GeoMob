@@ -16,7 +16,6 @@ import java.io.Serializable
 )
 data class Video (
 
-
     @ColumnInfo(name = "urlVideo") val urlImage: String,
 
     @ColumnInfo(name = "title") val title: String,
@@ -24,7 +23,6 @@ data class Video (
     @ColumnInfo(name = "datePublishing") val datePublishing : String,
 
     @ColumnInfo(name = "pays_id") val paysId: Int
-
 
 ) :Serializable {
 

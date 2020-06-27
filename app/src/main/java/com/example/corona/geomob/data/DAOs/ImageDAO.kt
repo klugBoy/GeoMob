@@ -28,4 +28,5 @@ interface ImageDAO {
 
     @Delete
     suspend fun deleteImage(image: Image)
+
 }

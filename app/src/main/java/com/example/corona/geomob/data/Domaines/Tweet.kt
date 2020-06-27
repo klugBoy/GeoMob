@@ -6,7 +6,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.io.Serializable
 
-@Entity(tableName = "image"
+@Entity(tableName = "tweet"
     ,foreignKeys = arrayOf(
         ForeignKey(entity = Pays::class,
             parentColumns = arrayOf("id"),
@@ -14,14 +14,17 @@ import java.io.Serializable
             onDelete = ForeignKey.CASCADE)
     )
 )
-data class Image(
+data class Tweet(
 
-    @ColumnInfo(name = "urlImage") val urlImage: String,
+    @ColumnInfo(name = "urlTweet") val urlTweet: String,
+
+    @ColumnInfo(name = "content") val content: String,
+
+    @ColumnInfo(name = "datePublishing") val datePublishing : String,
 
     @ColumnInfo(name = "pays_id") val paysId: Int
 
-) :Serializable {
+) : Serializable {
 
     @PrimaryKey(autoGenerate = true) var id : Int = 0
-
 }
