@@ -16,8 +16,9 @@ import java.io.Serializable
 )
 data class Personnalite(
 
-    @ColumnInfo(name = "description") val description: String,
-
+    @ColumnInfo(name = "position") val position: String,
+    @ColumnInfo(name = "nom") val nom: String,
+    @ColumnInfo(name = "prenom") val prenom: String,
     @ColumnInfo(name = "pays_id") val paysId: Int
 
 ) : Serializable {

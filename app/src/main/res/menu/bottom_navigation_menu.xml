@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/info_page"
+        android:enabled="true"
+        android:icon="@drawable/ic_info"
+        android:title="@string/text_item_1"/>
+    <item
+        android:id="@+id/history_page"
+        android:enabled="true"
+        android:icon="@drawable/ic_history"
+        android:title="@string/text_item_5"/>
+    <item
+        android:id="@+id/images_page"
+        android:enabled="true"
+        android:icon="@drawable/ic_images"
+        android:title="@string/text_item_2"/>
+    <item
+        android:id="@+id/videos_page"
+        android:enabled="true"
+        android:icon="@drawable/ic_videos"
+        android:title="@string/text_item_3"/>
+    <item
+        android:id="@+id/social_media_page"
+        android:enabled="true"
+        android:icon="@drawable/ic_social_media"
+        android:title="@string/text_item_4"/>
+
+
+</menu>

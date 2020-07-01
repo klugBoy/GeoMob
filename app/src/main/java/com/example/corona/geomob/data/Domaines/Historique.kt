@@ -18,7 +18,7 @@ import java.io.Serializable
 data class Historique(
 
     @ColumnInfo(name = "dateHistorique") val dateHistorique:String,
-
+    @ColumnInfo(name = "name") val name:String,
     @ColumnInfo(name = "description") val description:String,
 
     @ColumnInfo(name = "pays_id") val paysId: Int

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">GeoMob</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="text_item_1">About</string>
+    <string name="text_item_2">Images</string>
+    <string name="text_item_3">Videos</string>
+    <string name="text_item_4">Social</string>
+    <string name="countryName">Name :</string>
+    <string name="countryFlagTitle">Flag :</string>
+    <string name="countryAnthemTitle">Anthem :</string>
+    <string name="countrySurface">Area :</string>
+    <string name="countryPopulation">Population :</string>
+    <string name="countryPeople">Known people :</string>
+    <string name="countryDescription">Description :</string>
+    <string name="countryResource">Resources :</string>
+    <string name="text_item_5">History</string>
 </resources>

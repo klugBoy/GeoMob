@@ -13,7 +13,13 @@ interface PaysDAO {
     suspend fun getAllPays() : List<Pays>
 
     @Query("SELECT * FROM pays WHERE id = :id")
-    suspend fun getPays(id:Int) : Pays
+    suspend fun getPaysById(id:Int) : Pays
+
+    @Query("SELECT * FROM pays WHERE nom = :nom")
+    suspend fun getPaysByName(nom:String) : Pays
+
+    @Query("SELECT id FROM pays WHERE nom = :nom")
+    suspend fun getIdPays(nom:String) : Int
 
     @Insert
     suspend fun addMultiplePays(vararg pays: Pays)
