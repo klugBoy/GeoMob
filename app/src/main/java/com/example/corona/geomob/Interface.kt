@@ -22,3 +22,8 @@ interface HistoryPageInterface {
 interface SocialMediaPageInterface {
     fun socialMediaPage()
 }
+
+interface CountryDetailsActivityInterface {
+    fun DetailsPage(countryID : String)
+    fun DetailsPageLandscape(countryID : String)
+}

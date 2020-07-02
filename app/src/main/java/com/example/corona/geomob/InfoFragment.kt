@@ -59,13 +59,18 @@ class InfoFragment : Fragment() {
             }
             peopleData = SqlLiteDateBase.getInstance(context)?.getPersonnaliteDAO()?.findByPaysId(countryID) as ArrayList<Personnalite>
             withContext(Main){
+                try {
+
                 initPeopleRecycleView()
                 personsRecyclerViewAdapter.submitList(peopleData)
+                }catch (e:Exception){}
             }
             resourceData = SqlLiteDateBase.getInstance(context)?.getRessourceDAO()?.findByPaysId(countryID) as ArrayList<Ressource>
             withContext(Main){
+                try {
                 initResourceRecycleView()
                 resourceRecyclerViewAdapter.submitList(resourceData)
+                }catch (e:Exception){}
             }
             }
         }

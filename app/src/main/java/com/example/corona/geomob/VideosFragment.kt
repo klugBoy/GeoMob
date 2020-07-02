@@ -1,19 +1,16 @@
 package com.example.corona.geomob
 
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.MediaController
-import android.widget.VideoView
-import com.example.corona.geomob.data.Domaines.Image
+import androidx.fragment.app.Fragment
 import com.example.corona.geomob.data.Domaines.Video
 import com.example.corona.geomob.data.Repository.SqlLiteDateBase
-import kotlinx.android.synthetic.main.fragment_images.*
-import kotlinx.android.synthetic.main.fragment_title_back.*
 import kotlinx.android.synthetic.main.fragment_videos.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -37,7 +34,7 @@ class VideosFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        adjustFramesLayouts()
         countryID = arguments?.getString("country_id")!!.toInt()
         CoroutineScope(Dispatchers.IO).launch{
             data = SqlLiteDateBase.getInstance(context)?.getVideoDAO()?.findByPaysId(countryID!!) as ArrayList<Video>?
@@ -61,6 +58,36 @@ class VideosFragment : Fragment() {
         }
     }
 
+    fun adjustFramesLayouts(){
+        val orientation = resources.configuration.orientation
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            videoTitle.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 2f
+            )
+            paneVideo.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 1f
+            )
+            paneButtons.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 2f
+            )
+        }else{
+            videoTitle.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 3f
+            )
+            paneVideo.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 1f
+            )
+            paneButtons.layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT, 3f
+            )
+        }
+    }
     private fun displayVideo(element : Int){
 
         var video = data!![element]

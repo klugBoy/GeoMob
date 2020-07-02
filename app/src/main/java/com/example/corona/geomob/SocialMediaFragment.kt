@@ -22,6 +22,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
+import java.lang.Exception
 
 
 class SocialMediaFragment : Fragment() {
@@ -55,8 +56,11 @@ class SocialMediaFragment : Fragment() {
 
             getTweets(urlTwitterScraper,object :VolleyCallBack{
                 override fun onSuccess() {
+                    try {
+
                         initRecycleView()
                         tweetsRecycleAdapter.submitList(data!!)
+                    }catch (e:Exception){}
                 }
             })
             }

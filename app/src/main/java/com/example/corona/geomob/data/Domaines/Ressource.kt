@@ -18,8 +18,6 @@ import java.io.Serializable
 data class Ressource(
 
     @ColumnInfo(name = "nom") val nom: String,
-    @ColumnInfo(name = "quantite") val quantite: Int,
-    @ColumnInfo(name = "unite") val unite: String,
     @ColumnInfo(name = "pays_id") val paysId: Int
 
 )  : Serializable {

@@ -35,10 +35,8 @@ class ResourceRecycleAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class ResourceViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
         private var resourceName : TextView? = view.nomRessource
-        private var resourceQuantite : TextView? = view.quantiteRessource
         fun bind(resource : Ressource){
             resourceName?.text = resource.nom
-            resourceQuantite?.text = resource.quantite.toString() + " " + resource.unite
         }
 
     }

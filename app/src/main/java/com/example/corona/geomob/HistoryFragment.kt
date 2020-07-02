@@ -20,6 +20,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 class HistoryFragment : Fragment(),CellClickListener {
     lateinit var historyRecycleAdapter: HistoryRecycleAdapter
@@ -40,8 +41,12 @@ class HistoryFragment : Fragment(),CellClickListener {
         CoroutineScope(Dispatchers.IO).launch{
             data = SqlLiteDateBase.getInstance(context)?.getHistoriqueDao()?.findByPaysId(countryID!!) as ArrayList<Historique>
             withContext(Dispatchers.Main){
+                try {
+
                 initRecycleView()
                 historyRecycleAdapter.submitList(data)
+
+                }  catch (e:Exception){}
             }
         }
     }

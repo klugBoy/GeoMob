@@ -1,8 +1,13 @@
 package com.example.corona.geomob
 
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 
 class CountryDetailActivity : AppCompatActivity()
     ,HistoryPageInterface,ImagesPageInterface,AboutPageInterface,
@@ -58,6 +63,13 @@ class CountryDetailActivity : AppCompatActivity()
         val fragment = SocialMediaFragment()
         fragment.arguments = bundle
         supportFragmentManager.beginTransaction().replace(R.id.main_frame,fragment).commit()
+    }
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        if (newConfig.orientation === Configuration.ORIENTATION_LANDSCAPE) {
+            startActivity(Intent(this,MainActivity::class.java))
+        }
     }
 
 }

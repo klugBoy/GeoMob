@@ -138,29 +138,49 @@ abstract class SqlLiteDateBase:RoomDatabase() {
     }
         fun addEnglishResources(countryID:Int):Array<Ressource>?{
             return arrayOf<Ressource>(
-                Ressource("gold",0,"",countryID)
+                Ressource("coal",countryID),
+                Ressource("petroleum",countryID),
+                Ressource("natural gas",countryID),
+                Ressource("iron ore",countryID),
+                Ressource("lead",countryID),
+                Ressource("zinc",countryID),
+                Ressource("gold",countryID)
             )
         }
         fun addAmericanResources(countryID:Int):Array<Ressource>?{
             return arrayOf<Ressource>(
-                Ressource("gold",0,"",countryID)
+                Ressource("natural gas",countryID),
+                Ressource("uranium",countryID),
+                Ressource("petroleum",countryID),
+                Ressource("gold",countryID),
+                Ressource("silver",countryID),
+                Ressource("mercury",countryID)
             )
         }
         fun addGermanResources(countryID:Int):Array<Ressource>?{
             return arrayOf<Ressource>(
-                Ressource("gold",0,"",countryID)
+                Ressource("coal",countryID),
+                Ressource("lignite",countryID),
+                Ressource("natural gas",countryID),
+                Ressource("iron ore",countryID),
+                Ressource("copper",countryID),
+                Ressource("nickel",countryID)
             )
         }
         fun addRussianResources(countryID:Int):Array<Ressource>?{
             return arrayOf<Ressource>(
-                Ressource("petroleum",0,"billion tonnes",countryID),
-                Ressource("gas",0,"billion m3",countryID)
+                Ressource("natural gas",countryID),
+                Ressource("oil",countryID),
+                        Ressource("timber",countryID)
             )
         }
         fun addKoreanResources(countryID:Int):Array<Ressource>?{
             return arrayOf<Ressource>(
-                Ressource("petroleum",0,"billion tonnes",countryID),
-            Ressource("gas",0,"billion m3",countryID)
+                Ressource("coal",countryID),
+            Ressource("tungsten",countryID),
+                Ressource("graphite",countryID),
+                Ressource("molybdenum",countryID),
+                Ressource("hydropower potential",countryID)
             )
         }
 
