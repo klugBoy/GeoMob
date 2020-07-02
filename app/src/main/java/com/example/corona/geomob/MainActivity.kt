@@ -7,7 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.example.corona.geomob.data.Repository.SqlLiteDateBase
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() ,CountryDetailsActivityInterface
@@ -64,6 +68,9 @@ class MainActivity : AppCompatActivity() ,CountryDetailsActivityInterface
             val intent = Intent(this,CountryDetailActivity::class.java)
             intent.putExtra("country_id", countryID)
             startActivity(intent)
+        }
+        CoroutineScope(Dispatchers.IO).launch {
+            SqlLiteDateBase.getInstance(applicationContext)!!.getPaysDao().updateVisitePays(countryID.toInt())
         }
     }
 

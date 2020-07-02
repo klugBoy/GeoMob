@@ -24,7 +24,7 @@ import java.util.concurrent.Executors
     (Tweet::class),
     (Video::class),
     (Ressource::class)
-], version = 5)
+], version = 6)
 abstract class SqlLiteDateBase:RoomDatabase() {
 
     abstract fun getPaysDao() :PaysDAO
@@ -83,19 +83,19 @@ abstract class SqlLiteDateBase:RoomDatabase() {
     return arrayOf<Pays>(
     Pays("South Korea",
     "South Korea is a country in East Asia, constituting the southern part of the Korean Peninsula and sharing a land border with North Korea."
-    , 100_363,51_709_098, R.drawable.ic_south_korea.toString(),"south_korea.ogg"),
+    , 100_363,51_709_098, R.drawable.ic_south_korea.toString(),"south_korea.ogg",0),
     Pays("Germany",
     "Germany is a country in Central and Western Europe.It borders Denmark to the north, Poland and the Czech Republic to the east, Austria and Switzerland to the south, and France, Luxembourg, Belgium, and the Netherlands to the west."
-    , 357_022,83_166_711,R.drawable.ic_germany.toString(),"germany.ogg"),
+    , 357_022,83_166_711,R.drawable.ic_germany.toString(),"germany.ogg",0),
     Pays("United Kingdom",
     "United Kingdom is a sovereign country located off the north\u00ADwestern coast of the European mainland. The United Kingdom includes the island of Great Britain, the north\u00ADeastern part of the island of Ireland, and many smaller islands.Northern Ireland shares a land border with the Republic of Ireland. Otherwise, the United Kingdom is surrounded by the Atlantic Ocean, with the North Sea to the east, the English Channel to the south and the Celtic Sea to the southwest."
-    , 242_495,67_886_004,R.drawable.ic_united_kingdom.toString(),"united_kingdom.ogg"),
+    , 242_495,67_886_004,R.drawable.ic_united_kingdom.toString(),"united_kingdom.ogg",0),
     Pays("United States",
     "United States is a country mostly located in central North America, between Canada and Mexico. It consists of 50 states, a federal district, five major self-governing territories, and various possessions."
-    , 9_833_520,328_239_523,R.drawable.ic_united_states.toString(),"united_states.ogg"),
+    , 9_833_520,328_239_523,R.drawable.ic_united_states.toString(),"united_states.ogg",0),
     Pays("Russia",
     "Russia is a transcontinental country located in Eastern Europe and Northern Asia."
-    , 17_098_246,146_748_590,R.drawable.ic_russia.toString(),"russia.ogg")
+    , 17_098_246,146_748_590,R.drawable.ic_russia.toString(),"russia.ogg",0)
     ) }
     fun populateEnglishPersons(countryID:Int):Array<Personnalite>?{
     return arrayOf<Personnalite>(

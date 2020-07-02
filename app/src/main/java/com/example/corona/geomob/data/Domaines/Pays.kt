@@ -19,7 +19,8 @@ data class Pays(
 
     @ColumnInfo(name = "urlDrapeau") val urlDrapeau: String,
 
-    @ColumnInfo(name = "urlHymneNational") val urlHymneNational:String
+    @ColumnInfo(name = "urlHymneNational") val urlHymneNational:String,
+    @ColumnInfo(name = "visite") val visite : Int
 
 ) :Serializable {
 

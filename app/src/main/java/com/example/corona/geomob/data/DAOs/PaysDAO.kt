@@ -21,6 +21,12 @@ interface PaysDAO {
     @Query("SELECT id FROM pays WHERE nom = :nom")
     suspend fun getIdPays(nom:String) : Int
 
+    @Query("SELECT * FROM pays WHERE visite = 0")
+    suspend fun getAllNonVisitePays() : List<Pays>
+
+    @Query("UPDATE pays SET visite = 1 WHERE id = :id")
+    suspend fun updateVisitePays(id:Int)
+
     @Insert
     suspend fun addMultiplePays(vararg pays: Pays)
 
