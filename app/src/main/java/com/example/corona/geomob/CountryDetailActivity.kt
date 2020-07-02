@@ -37,7 +37,11 @@ class CountryDetailActivity : AppCompatActivity()
     }
 
     override fun videosPage() {
-
+        val bundle = Bundle()
+        bundle.putString("country_id",countryID )
+        val fragment = VideosFragment()
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction().replace(R.id.main_frame,fragment).commit()
     }
 
     override fun imagesPage() {
@@ -49,7 +53,11 @@ class CountryDetailActivity : AppCompatActivity()
     }
 
     override fun socialMediaPage() {
-
+        val bundle = Bundle()
+        bundle.putString("country_id",countryID )
+        val fragment = SocialMediaFragment()
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction().replace(R.id.main_frame,fragment).commit()
     }
 
 }

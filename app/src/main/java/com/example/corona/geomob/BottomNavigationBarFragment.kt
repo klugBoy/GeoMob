@@ -34,8 +34,11 @@ class BottomNavigationBarFragment : Fragment() {
                 R.id.images_page->{
                     (activity as ImagesPageInterface).imagesPage()
                 }
+                R.id.videos_page->{
+                    (activity as VideosPageInterface).videosPage()
+                }
                 else->{
-                    Toast.makeText(context,"Clicked",Toast.LENGTH_LONG).show()
+                    (activity as SocialMediaPageInterface).socialMediaPage()
                 }
             }
 

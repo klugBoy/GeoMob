@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".VideosFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="10dp"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_weight="3"
+                android:id="@+id/videoTitle"
+                android:layout_margin="10dp"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TextView>
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <VideoView
+                    android:id="@+id/videoFrame"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </VideoView>
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="3"
+                >
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/before_button"
+                    android:layout_width="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:text="previous"
+                    android:textAllCaps="true"
+                    android:textSize="13dp"
+                    android:layout_weight="1"
+                    app:iconTint="@color/colorPrimary"
+                    app:icon="@drawable/ic_back"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/next_button"
+                    android:layout_width="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:text="next"
+                    android:textAllCaps="true"
+                    android:textSize="13dp"
+                    android:layout_weight="1"
+                    android:layoutDirection="rtl"
+                    app:iconTint="@color/colorPrimary"
+                    app:icon="@drawable/ic_next"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</FrameLayout>

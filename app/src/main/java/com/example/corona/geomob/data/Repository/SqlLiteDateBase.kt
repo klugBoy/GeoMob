@@ -67,26 +67,16 @@ abstract class SqlLiteDateBase:RoomDatabase() {
                     id3 = getInstance(context)?.getPaysDao()?.getIdPays("United Kingdom")
                     id4 = getInstance(context)?.getPaysDao()?.getIdPays("United States")
                     id5 = getInstance(context)?.getPaysDao()?.getIdPays("Russia")
-                    getInstance(context)?.getPersonnaliteDAO()?.addMultiplePersonnalite(*populateKoreanPersons(id1!!)!!)
-                    getInstance(context)?.getPersonnaliteDAO()?.addMultiplePersonnalite(*populateGermanPersons(id2!!)!!)
-                    getInstance(context)?.getPersonnaliteDAO()?.addMultiplePersonnalite(*populateEnglishPersons(id3!!)!!)
-                    getInstance(context)?.getPersonnaliteDAO()?.addMultiplePersonnalite(*populateAmericanPersons(id4!!)!!)
-                    getInstance(context)?.getPersonnaliteDAO()?.addMultiplePersonnalite(*populateRussianPersons(id5!!)!!)
-                    getInstance(context)?.getRessourceDAO()?.addMultipleRessource(*addKoreanResources(id1!!)!!)
-                    getInstance(context)?.getRessourceDAO()?.addMultipleRessource(*addGermanResources(id2!!)!!)
-                    getInstance(context)?.getRessourceDAO()?.addMultipleRessource(*addEnglishResources(id3!!)!!)
-                    getInstance(context)?.getRessourceDAO()?.addMultipleRessource(*addAmericanResources(id4!!)!!)
-                    getInstance(context)?.getRessourceDAO()?.addMultipleRessource(*addRussianResources(id5!!)!!)
-                    getInstance(context)?.getHistoriqueDao()?.addMultipleHistorique(*addKoreanHistory(id1!!)!!)
-                    getInstance(context)?.getHistoriqueDao()?.addMultipleHistorique(*addGermanHistory(id2!!)!!)
-                    getInstance(context)?.getHistoriqueDao()?.addMultipleHistorique(*addEnglishHistory(id3!!)!!)
-                    getInstance(context)?.getHistoriqueDao()?.addMultipleHistorique(*addAmericanHistory(id4!!)!!)
-                    getInstance(context)?.getHistoriqueDao()?.addMultipleHistorique(*addRussiaHistory(id5!!)!!)
-                    getInstance(context)?.getImageDao()?.addMultipleImage(*addKoreaImages(id1!!)!!)
-                    getInstance(context)?.getImageDao()?.addMultipleImage(*addGermanImages(id2!!)!!)
-                    getInstance(context)?.getImageDao()?.addMultipleImage(*addEnglishImages(id3!!)!!)
-                    getInstance(context)?.getImageDao()?.addMultipleImage(*addAmericanImages(id4!!)!!)
-                    getInstance(context)?.getImageDao()?.addMultipleImage(*addRussianImages(id5!!)!!)
+                    getInstance(context)?.getPersonnaliteDAO()?.addMultiplePersonnalite(*populateKoreanPersons(id1!!)!!,*populateGermanPersons(id2!!)!!,*populateEnglishPersons(id3!!)!!,
+                        *populateAmericanPersons(id4!!)!!,*populateRussianPersons(id5!!)!!)
+                    getInstance(context)?.getRessourceDAO()?.addMultipleRessource(*addKoreanResources(id1!!)!!,*addGermanResources(id2!!)!!,
+                        *addEnglishResources(id3!!)!!,*addAmericanResources(id4!!)!!,*addRussianResources(id5!!)!!)
+                    getInstance(context)?.getHistoriqueDao()?.addMultipleHistorique(*addKoreanHistory(id1!!)!!,*addGermanHistory(id2!!)!!,
+                        *addEnglishHistory(id3!!)!!,*addAmericanHistory(id4!!)!!,*addRussiaHistory(id5!!)!!)
+                    getInstance(context)?.getImageDao()?.addMultipleImage(*addKoreaImages(id1!!)!!,*addGermanImages(id2!!)!!,*addEnglishImages(id3!!)!!,
+                        *addAmericanImages(id4!!)!!,*addRussianImages(id5!!)!!)
+                    getInstance(context)?.getVideoDAO()?.addMultipleVideo(*addKoreanVideos(id1!!)!!,*addGermanVideos(id2!!)!!,*addEnglishVideos(id3!!)!!,
+                        *addAmericanVideos(id4!!)!!,*addRussianVideos(id5!!)!!)
                 }
             } }).build()
     fun populateData(): Array<Pays>? {
@@ -187,6 +177,7 @@ abstract class SqlLiteDateBase:RoomDatabase() {
             return arrayOf<Historique>(
                 Historique("08/05/1945","Germany's surrender in WW2","Adolf Hitler, the Nazi leader, had committed suicide on 30 April during the Battle of Berlin and Germany's surrender was authorised by his successor, Reichspräsident Karl Dönitz in the 8th of MAY 1945.",countryID)
                 , Historique("09/11/1989","The fall of Berlin's wall","On November 9, 1989, as the Cold War began to thaw across Eastern Europe, the spokesman for East Berlin's Communist Party announced a change in his city's relations with the West. Starting at midnight that day, he said, citizens of the GDR were free to cross the country's borders.",countryID)
+
             )
         }
 
@@ -244,6 +235,37 @@ abstract class SqlLiteDateBase:RoomDatabase() {
                 Image("https://upload.wikimedia.org/wikipedia/commons/4/4c/30_St_Mary_Axe_from_Leadenhall_Street.jpg",countryID),
                 Image("https://upload.wikimedia.org/wikipedia/commons/9/9a/Central_Birmingham_Skyline_%286305750228%29.jpg",countryID)
             )}
+
+        fun addRussianVideos(countryID: Int):Array<Video>?{
+            return arrayOf<Video>(
+                Video("moscowandstpetersburg","The majesty of Moscow and St Petersburg",countryID)
+                ,Video("russiantour","Kalinka Malinka Russian tour",countryID)
+            )
+        }
+        fun addEnglishVideos(countryID: Int):Array<Video>?{
+            return arrayOf<Video>(
+                Video("travellondoninaminute","Travel London in a Minute - Aerial Drone Video",countryID),
+                Video("londonengland","London - England",countryID)
+            )
+        }
+        fun addKoreanVideos(countryID: Int):Array<Video>?{
+            return arrayOf<Video>(
+                Video("korea","TRAVELLING _ SOUTH KOREA in one minute",countryID),
+                Video("travelseoulinaflash","Travel Seoul in a Flash - Hyperlapse & Aerial Videos",countryID)
+            )
+        }
+        fun addAmericanVideos(countryID: Int):Array<Video>?{
+            return arrayOf<Video>(
+                Video("videousa","Cedar City, Utah, United States",countryID),
+                Video("bestofusa","Best of USA",countryID)
+            )
+        }
+        fun addGermanVideos(countryID: Int):Array<Video>?{
+            return arrayOf<Video>(
+                Video("trieste","TRIESTE in 2 minutes",countryID),
+                Video("berlin","2 minute tours_ Berlin",countryID)
+            )
+        }
 
 }
 
